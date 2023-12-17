@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -5,18 +6,27 @@ public class Wall implements Structure {
     private List<Block> blocks;
 
     public Optional<Block> findBlockByColor(String color) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'findBlockByColor'");
+    
+        for(int i=0; i < blocks.size(); i++){
+            if (color == blocks.get(i).getColor()) {
+                System.out.println(blocks.get(i));
+            } 
+        }
+        return null;
     }
 
     public List<Block> findBlocksByMaterial(String material) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'findBlocksByMaterial'");
+        List<Block> temBlocks = new ArrayList<Block>();
+        for(int i=0; i < blocks.size(); i++){
+            if (material == blocks.get(i).getMaterial()) {
+                temBlocks.add(blocks.get(i));
+            } 
+        }
+        return temBlocks;
     }
 
     public int count() {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        return blocks.size();
     }
 }
 
